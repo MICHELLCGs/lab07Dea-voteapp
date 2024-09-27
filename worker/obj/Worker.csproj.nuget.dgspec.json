@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\Worker\\Worker.csproj": {}
+    "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\worker\\Worker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\Worker\\Worker.csproj": {
+    "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\worker\\Worker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\Worker\\Worker.csproj",
+        "projectUniqueName": "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\worker\\Worker.csproj",
         "projectName": "Worker",
-        "projectPath": "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\Worker\\Worker.csproj",
+        "projectPath": "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\worker\\Worker.csproj",
         "packagesPath": "C:\\Users\\miche\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\Worker\\obj\\",
+        "outputPath": "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\worker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\miche\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Npgsql": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.16, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

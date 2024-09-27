@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "jvzEjb0CeL8=",
+  "dgSpecHash": "CTeAkmi/sEg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\Worker\\Worker.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\worker\\Worker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\miche\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\miche\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\miche\\.nuget\\packages\\npgsql\\8.0.4\\npgsql.8.0.4.nupkg.sha512",
+    "C:\\Users\\miche\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\miche\\.nuget\\packages\\stackexchange.redis\\2.8.16\\stackexchange.redis.2.8.16.nupkg.sha512",
+    "C:\\Users\\miche\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
