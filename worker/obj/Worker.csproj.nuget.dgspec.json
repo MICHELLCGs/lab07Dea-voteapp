@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\worker\\Worker.csproj": {}
+    "C:\\Users\\WOLF\\Downloads\\lab07Dea-voteapp\\worker\\worker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\worker\\Worker.csproj": {
+    "C:\\Users\\WOLF\\Downloads\\lab07Dea-voteapp\\worker\\worker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\worker\\Worker.csproj",
-        "projectName": "Worker",
-        "projectPath": "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\worker\\Worker.csproj",
-        "packagesPath": "C:\\Users\\miche\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\miche\\OneDrive\\Documentos\\Tecsup\\Sexto\\Desarrollo de aplicaciones empresariales avanzado\\Lab07\\lab07-voteapp\\worker\\obj\\",
+        "projectUniqueName": "C:\\Users\\WOLF\\Downloads\\lab07Dea-voteapp\\worker\\worker.csproj",
+        "projectName": "worker",
+        "projectPath": "C:\\Users\\WOLF\\Downloads\\lab07Dea-voteapp\\worker\\worker.csproj",
+        "packagesPath": "C:\\Users\\WOLF\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WOLF\\Downloads\\lab07Dea-voteapp\\worker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\miche\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\WOLF\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -46,13 +45,27 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Npgsql": {
+            "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.8, )"
             },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.8.16, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
             }
           },
           "imports": [
@@ -67,6 +80,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

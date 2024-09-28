@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Vote</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votar por el Perro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Vote for your favorite option</h1>
-    <form method="POST">
-        <button type="submit" name="vote" value="cats">Vote Cats</button>
-        <button type="submit" name="vote" value="dogs">Vote Dogs</button>
-    </form>
+    <div class="container">
+        <h1 class="text-center mt-5">¡Vota por este perro!</h1>
+        <div class="card mx-auto mt-5" style="width: 18rem;">
+            <img src="{{ dog_image }}" class="card-img-top" alt="{{ dog_name }}">
+            <div class="card-body text-center">
+                <h5 class="card-title">{{ dog_name }}</h5>
+                
+                <!-- Formulario para votar por el perro -->
+                <form method="POST" action="/vote" class="d-inline">
+                    <input type="hidden" name="dog_name" value="{{ dog_name }}">
+                    <button type="submit" class="btn btn-primary">Votar</button>
+                </form>
+
+                <!-- Botón para cambiar a otro perro sin votar -->
+                <form method="GET" action="/change" class="d-inline">
+                    <button type="submit" class="btn btn-secondary">Cambiar a otro</button>
+                </form>               
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>

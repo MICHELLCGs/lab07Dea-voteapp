@@ -1,62 +1,54 @@
-version: '3.8'
-
 services:
-  voting-app:
-    build: ./voting-app
-    image: voting-app:latest
-    ports:
-      - "5000:80"
-    environment:
-      - REDIS=redis
-    networks:
-      - frontend
-      - backend
-    deploy:
-      replicas: 2
-
-  result-app:
-    build: ./result-app
-    image: result-app:latest
-    ports:
-      - "5001:80"
-    environment:
-      - DB=postgres://postgres:password@db/postgres
-    networks:
-      - frontend
-    deploy:
-      replicas: 1
-
   redis:
     image: redis:alpine
     ports:
       - "6379:6379"
-    networks:
-      - backend
 
   db:
     image: postgres:15
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
+      POSTGRES_DB: votesdb
     volumes:
       - db-data:/var/lib/postgresql/data
-    networks:
-      - backend
+    ports:
+      - "5432:5432"
 
   worker:
     build: ./worker
-    image: worker:latest
+    ports:
+      - "8080:8080"
     environment:
-      - REDIS=redis
-      - DB=postgres://postgres:password@db/postgres
-    networks:
-      - backend
-    deploy:
-      replicas: 1
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__PostgreSqlConnection: "Host=db;Database=votesdb;Username=postgres;Password=password"
+      ConnectionStrings__RedisConnection: "redis:6379"
+    depends_on:
+      - db
+      - redis
 
-networks:
-  frontend:
-  backend:
+  voting-app:
+    build: ./voting-app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    environment:
+      FLASK_ENV: development
+      REDIS_HOST: redis
+      VOTE_API_URL: "http://worker:8080/vote"
+
+  result-app:
+    build: ./result-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: votesdb
+      POSTGRES_HOST: db
 
 volumes:
   db-data:
