@@ -23,6 +23,10 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__PostgreSqlConnection: "Host=db;Database=votesdb;Username=postgres;Password=password"
       ConnectionStrings__RedisConnection: "redis:6379"
+    deploy:
+      replicas: 2  # Escala el servicio worker a 2 réplicas
+      restart_policy:
+        condition: on-failure
     depends_on:
       - db
       - redis
@@ -31,24 +35,26 @@ services:
     build: ./voting-app
     ports:
       - "5000:5000"
-    depends_on:
-      - redis
     environment:
       FLASK_ENV: development
       REDIS_HOST: redis
       VOTE_API_URL: "http://worker:8080/vote"
+    deploy:
+      restart_policy:
+        condition: on-failure
 
   result-app:
     build: ./result-app
     ports:
       - "3000:3000"
-    depends_on:
-      - db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: votesdb
       POSTGRES_HOST: db
+    deploy:
+      restart_policy:
+        condition: on-failure
 
 volumes:
   db-data:
